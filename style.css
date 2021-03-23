@@ -1,0 +1,70 @@
+/*STANDARD STUFF*/
+
+h1 {
+    text-align: center;
+    font-family: sans-serif;
+    font-size: 50px;
+    /*color: orange;*/
+}
+
+ul {
+    list-style-type: none;
+    text-align: left;
+}
+
+/*SITE SPECIFIC CLASSES*/
+.bracket {
+    margin: 10px;
+    grid-template-columns: 220px 220px 220px;
+    grid-template-rows: 200px;
+    /*DEBUG
+    background-color: red;
+    border-width: 2px;
+    border-color: black;
+    border-style: dashed;
+    DEBUG*/
+}
+
+.matchup {
+    background-color: #DAD9D8;
+    width: 200px;
+    display: grid;
+    grid-template-columns: 20px 160px 20px;
+    grid-template-rows: 20px 20px;
+    margin: 10px;
+    border-radius: 5px;
+    box-shadow: 4px 4px 4px grey;
+}
+
+.team-name {
+    text-align: left;
+    display: inline-block;
+}
+
+.seed {
+    display: inline-block;
+    text-align: center;
+    font-size: 12px;
+    line-height: 1.5;
+    vertical-align: middle;
+}
+
+.winner {
+    font-weight: bold;
+}
+
+/*
+.seed {
+    display: inline-block;
+    font: lucida;
+    font-size: 12px;
+    text-justify: center;
+    line-height: .5;
+    vertical-align: middle;
+    color: orangered;
+}
+
+.score {
+    display: inline-block;
+}
+*/
