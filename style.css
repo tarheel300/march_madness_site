@@ -12,6 +12,21 @@ ul {
     text-align: left;
 }
 
+input[type="text"] {
+    background: transparent;
+    border: none;
+}
+
+input[type="text"]:focus {
+    outline: none;
+}
+
+.button {
+    border: none;
+    border-radius: 10px;
+    background-color: lightskyblue;
+}
+
 /*SITE SPECIFIC CLASSES*/
 .bracket {
     display: grid;
@@ -42,6 +57,8 @@ ul {
      DEBUG*/
 }
 
+
+
 .matchup:hover {
     background-color: green;
 }
@@ -59,6 +76,7 @@ ul {
 .team-name {
     text-align: left;
     display: inline-block;
+    font-size: 12px;
 }
 
 .seed {

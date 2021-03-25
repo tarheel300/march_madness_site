@@ -5,13 +5,14 @@
     <link rel="create stylesheet" href="style.css">    
   </head>
   <body>
-    
+    <script src = "main.js" defer></script>
     <h1>Pick Your Brackets</h1>
     <div class = "bracket">
       <!--Row 1 Begin-->
       <div class = "matchup">
         <div class = "seed"> 1 </div>
-        <div class = "team-name winner"> North Carolina </div>
+        <!--<div class = "team-name winner">  </div>-->
+        <input type = "text" class = "team-name winner" onclick="my_first_function()" value = "North Carolina" readonly>
         <div class = "score"> 95 </div>
         <div class = "seed"> 16 </div>
         <div class = "team-name"> Duke </div>
@@ -106,6 +107,6 @@
       </div>
       -->
     </div>
+    <input type = "button" class = "button" onclick="my_first_function()" value = "Click Me">
   </body>
-  <script src = "main.js" defer></script>
 </html>

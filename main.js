@@ -1,3 +1,6 @@
-console.log('Hello World!');
+console.log("I'm Running.");
 
-alert ("Go Heels!");
+function my_first_function() {
+    alert("Go Heels!")
+}
+
