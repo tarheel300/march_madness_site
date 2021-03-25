@@ -17,6 +17,7 @@ ul {
     display: grid;
     grid-template-columns: 220px 220px 220px;
     grid-template-rows: 60px 60px 60px 60px;
+    background-color: #4B9CD3;
     /*DEBUG
     background-color: red;
     border-width: 2px;
@@ -39,6 +40,10 @@ ul {
      /*DEBUG
 
      DEBUG*/
+}
+
+.matchup:hover {
+    background-color: green;
 }
 
 .round-two {
