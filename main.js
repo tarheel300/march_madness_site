@@ -16,6 +16,8 @@ function select_winner(dest_id) {
     console.log("Hello!");
     console.log(dest_id);
     //get ID of the input clicked
+    //check if the destination already has text
+    console.log(document.getElementById('4'))
     //update the css classes of the input clicked (seed / name / score)
     //get ID of the next round where the winner would go
     //Add Seed Number
