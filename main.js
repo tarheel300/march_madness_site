@@ -14,10 +14,15 @@ function display_cur_ts() {
 
 function select_winner(dest_id) {
     console.log("Hello!");
-    console.log(dest_id);
     //get ID of the input clicked
     //check if the destination already has text
-    console.log(document.getElementById('4'))
+    dest_id_content = document.getElementById(dest_id).innerHTML;
+    console.log(dest_id_content)
+    console.log(dest_id_content.length)
+
+    if (dest_id_content.length == 0) {
+        console.log("I'm Zero.")
+    }
     //update the css classes of the input clicked (seed / name / score)
     //get ID of the next round where the winner would go
     //Add Seed Number
