@@ -10,23 +10,25 @@
     <h1>Pick Your Brackets</h1>
     <div class = "bracket">
       <!--Row 1 Begin-->
-      <div class = "matchup">
+      <div class = "matchup" id = "4">
         <div class = "seed"> 1 </div>
         <!--<div class = "team-name winner">  </div>-->
-        <input type = "text" class = "team-name winner" onclick="my_first_function()" value = "North Carolina" readonly>
+        <input type = "text" class = "team-name winner" onclick="select_winner(2)" value = "North Carolina" readonly>
         <div class = "score"> 95 </div>
         <div class = "seed"> 16 </div>
-        <div class = "team-name"> Duke </div>
+        <input type = "text" class = "team-name" onclick="select_winner(2)" value = "Duke" readonly>
         <div class = "score"> 82 </div>      
       </div> 
       <div class = "round-two">
-        <div class = "matchup">
+        <div class = "matchup" id = "2">
+          <!-- Taking this stuff out to figure out how to populate
           <div class = "seed"> 1 </div>
           <div class = "team-name"> North Carolina </div>
           <div class = "score"> 86 </div>
           <div class = "seed"> 9 </div>
           <div class = "team-name"> Virginia Tech </div>
-          <div class = "score"> 82 </div>      
+          <div class = "score"> 82 </div> 
+          -->     
         </div>
       </div>
       <div class = "round-three">
