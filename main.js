@@ -20,8 +20,9 @@ function select_winner(dest_id) {
     console.log(dest_id_content)
     console.log(dest_id_content.length)
 
-    if (dest_id_content.length == 0) {
-        console.log("I'm Zero.")
+    if (dest_id_content.length > 0) {
+        console.log("I'm Not Zero.")
+        document.getElementById(dest_id).innerHTML = ''
     }
     //update the css classes of the input clicked (seed / name / score)
     //get ID of the next round where the winner would go
@@ -34,8 +35,5 @@ function select_winner(dest_id) {
     document.getElementById(dest_id).appendChild(para);
     //document.getElementById(dest_id).appendChild(p);
 }
-
-//test commit from vs code
-//testing again
 
 $(document).ready(display_cur_ts())
