@@ -36,5 +36,6 @@ function select_winner(dest_id) {
 }
 
 //test commit from vs code
+//testing again
 
 $(document).ready(display_cur_ts())
