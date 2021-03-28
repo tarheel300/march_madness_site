@@ -11,95 +11,72 @@
     <div class = "bracket">
       <!--Row 1 Begin-->
       <div class = "matchup" id = "4">
-        <div class = "seed"> 1 </div>
-        <!--<div class = "team-name winner">  </div>-->
-        <input type = "text" class = "team-name winner" onclick="select_winner(2)" value = "North Carolina" readonly>
-        <div class = "score"> 95 </div>
-        <div class = "seed"> 16 </div>
-        <input type = "text" class = "team-name" onclick="select_winner(2)" value = "Duke" readonly>
-        <div class = "score"> 82 </div>      
-      </div> 
+        <div class = "team" id = "4Top">
+          <div class = "seed"> 1 </div>
+          <!--<div class = "team-name winner">  </div>-->
+          <input type = "text" class = "team-name winner" onclick="select_winner(2)" value = "North Carolina" readonly>
+          <div class = "score"> 95 </div>
+        </div>
+        <div class = "team" id = "4Bot">
+          <div class = "seed"> 16 </div>
+          <input type = "text" class = "team-name" onclick="select_winner(2)" value = "Duke" readonly>
+          <div class = "score"> 82 </div>   
+        </div>
+      </div>
       <div class = "round-two">
-        <div class = "matchup" id = "2"></div>
+        <div class = "matchup" id = "2">
+          <div class = "team" id = "2Top"></div>
+          <div class = "team" id = "2Bot"></div>
+        </div>
       </div>
       <div class = "round-three">
-        <div class = "matchup">
-          <div class = "seed"> 1 </div>
-          <div class = "team-name"> North Carolina </div>
-          <div class = "score"> 96 </div>
-          <div class = "seed"> 7 </div>
-          <div class = "team-name"> Florida State </div>
-          <div class = "score"> 87 </div>      
+        <div class = "matchup" id = "1">
+          <div class = "team" id = "1Top"></div>
+          <div class = "team" id = "1Bot"></div>
         </div>
       </div>
-      <div class = "matchup">
-        <div class = "seed"> 8 </div>
-        <div class = "team-name"> North Carolina State </div>
-        <div class = "score"> 73 </div>
-        <div class = "seed"> 9 </div>
-        <div class = "team-name"> Virginia Tech </div>
-        <div class = "score"> 74 </div>      
+      <div class = "matchup" id = "5">
+        <div class = "team" id = "5Top">
+          <div class = "seed"> 8 </div>
+          <div class = "team-name"> North Carolina State </div>
+          <div class = "score"> 73 </div>
+        </div>
+        <div class = "team" id = "5Bot">
+          <div class = "seed"> 9 </div>
+          <div class = "team-name"> Virginia Tech </div>
+          <div class = "score"> 74 </div>   
+        </div>
       </div>
-      <div class = "matchup">
-        <div class = "seed"> 10 </div>
-        <div class = "team-name"> Pitt </div>
-        <div class = "score"> 63 </div>
-        <div class = "seed"> 7 </div>
-        <div class = "team-name"> Florida State </div>
-        <div class = "score"> 94 </div>      
+      <div class = "matchup" id = "6">
+        <div class = "team" id = "6Top">
+          <div class = "seed"> 10 </div>
+          <div class = "team-name"> Pitt </div>
+          <div class = "score"> 63 </div>
+        </div>
+        <div class = "team" id = "6Bot">
+          <div class = "seed"> 7 </div>
+          <div class = "team-name"> Florida State </div>
+          <div class = "score"> 94 </div>    
+        </div>
       </div>
       <div class = "round-two">
-        <div class = "matchup">
-          <div class = "seed"> 7 </div>
-          <div class = "team-name"> Florida State </div>
-          <div class = "score"> 95 </div>
-          <div class = "seed"> 2 </div>
-          <div class = "team-name"> Virginia </div>
-          <div class = "score"> 93 </div>      
+        <div class = "matchup" id = "3">
+          <div class = "team" id = "3Top"></div>
+          <div class = "team" id = "3Bot"></div>
         </div>
       </div>
-      <div class = "matchup">
-        <div class = "seed"> 15 </div>
-        <div class = "team-name"> Boston College </div>
-        <div class = "score"> 95 </div>
-        <div class = "seed"> 2 </div>
-        <div class = "team-name"> Virginia </div>
-        <div class = "score"> 82 </div>      
+      <div class = "matchup" id = "7">
+        <div class = "team" id = "7Top">
+          <div class = "seed"> 15 </div>
+          <div class = "team-name"> Boston College </div>
+          <div class = "score"> 95 </div>
+        </div>
+        <div class = "team" id = "7Bot">
+          <div class = "seed"> 2 </div>
+          <div class = "team-name"> Virginia </div>
+          <div class = "score"> 82 </div>    
+        </div>
       </div>
-      <!-- Geting rid of some extra stuff to focus on other features instead of all 64 teams
-      <div class = "matchup">
-        <div class = "seed"> 1 </div>
-        <div class = "team-name winner"> North Carolina </div>
-        <div class = "score"> 95 </div>
-        <div class = "seed"> 16 </div>
-        <div class = "team-name"> Duke </div>
-        <div class = "score"> 82 </div>      
-      </div> 
-      <div class = "matchup">
-        <div class = "seed"> 8 </div>
-        <div class = "team-name"> North Carolina State </div>
-        <div class = "score"> 73 </div>
-        <div class = "seed"> 9 </div>
-        <div class = "team-name"> Virginia Tech </div>
-        <div class = "score"> 74 </div>      
-      </div>
-      <div class = "matchup">
-        <div class = "seed"> 10 </div>
-        <div class = "team-name"> Pitt </div>
-        <div class = "score"> 63 </div>
-        <div class = "seed"> 7 </div>
-        <div class = "team-name"> Florida State </div>
-        <div class = "score"> 94 </div>      
-      </div>
-      <div class = "matchup">
-        <div class = "seed"> 15 </div>
-        <div class = "team-name"> Boston College </div>
-        <div class = "score"> 95 </div>
-        <div class = "seed"> 2 </div>
-        <div class = "team-name"> Virginia </div>
-        <div class = "score"> 82 </div>      
-      </div>
-      -->
     </div>
     <p id="cur_ts"> Current Date/Time: </p>
     <input type = "button" class = "button" onclick="my_first_function()" value = "Click Me">

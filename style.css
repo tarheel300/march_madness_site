@@ -12,6 +12,10 @@ ul {
     text-align: left;
 }
 
+body {
+    background-color: #edeef0;
+}
+
 input[type="text"] {
     background: transparent;
     border: none;
@@ -27,12 +31,13 @@ input[type="text"]:focus {
     background-color: lightskyblue;
 }
 
-/*SITE SPECIFIC CLASSES*/
+/*=================GRID SECTION=================*/
+/*Putting to g*/
 .bracket {
     display: grid;
     grid-template-columns: 220px 220px 220px;
     grid-template-rows: 60px 60px 60px 60px;
-    background-color: #4B9CD3;
+    background-color: #8db5da;
     /*DEBUG
     background-color: red;
     border-width: 2px;
@@ -47,7 +52,7 @@ input[type="text"]:focus {
     width: 200px;
     height: 40px;
     display: grid;
-    grid-template-columns: 20px 160px 20px;
+    grid-template-columns: 200px;
     grid-template-rows: 20px 20px;
     margin: 10px;
     border-radius: 5px;
@@ -57,8 +62,16 @@ input[type="text"]:focus {
      DEBUG*/
 }
 
+.team {
+    background-color: pink;
+    width: 200px;
+    display: grid;
+    grid-template-columns: 20px 160px 20px;
+    grid-template-rows: 20px;
+}
+/*===============GRID SECTION END===============*/
 
-
+/*SITE SPECIFIC CLASSES*/
 .matchup:hover {
     background-color: green;
 }
