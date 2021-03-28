@@ -35,4 +35,6 @@ function select_winner(dest_id) {
     //document.getElementById(dest_id).appendChild(p);
 }
 
+//test commit from vs code
+
 $(document).ready(display_cur_ts())
