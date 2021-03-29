@@ -72,6 +72,10 @@ input[type="text"]:focus {
 }
 /*===============GRID SECTION END===============*/
 
+.team:hover {
+    background-color: azure;
+}
+
 /*SITE SPECIFIC CLASSES*/
 .matchup:hover {
     background-color: green;
