@@ -1,13 +1,13 @@
 console.log("I'm Running.");
 
-data = [{"matchup": 4, "seed" : 1, "team_nm" : "North Carolina", "rgn_nm" : "main"}
-, {"matchup": 7, "seed" : 2, "team_nm" : "Virginia", "rgn_nm" : "main"}
-, {"matchup": 6, "seed" : 3, "team_nm" : "Florida State", "rgn_nm" : "main"}
-, {"matchup": 5, "seed" : 4, "team_nm" : "North Carolina State", "rgn_nm" : "main"}
-, {"matchup": 5, "seed" : 5, "team_nm" : "Virginia Tech", "rgn_nm" : "main"}
-, {"matchup": 6, "seed" : 6, "team_nm" : "Pittsburgh", "rgn_nm" : "main"}
-, {"matchup": 7, "seed" : 7, "team_nm" : "Boston College", "rgn_nm" : "main"}
-, {"matchup": 4, "seed" : 8, "team_nm" : "Duke", "rgn_nm" : "main"}
+data = [{"matchup": 4, "seed" : 1, "team_pos": "top", "team_nm" : "North Carolina", "rgn_nm" : "main"}
+, {"matchup": 7, "seed" : 2, "team_pos": "bot", "team_nm" : "Virginia", "rgn_nm" : "main"}
+, {"matchup": 6, "seed" : 3, "team_pos": "top", "team_nm" : "Florida State", "rgn_nm" : "main"}
+, {"matchup": 5, "seed" : 4, "team_pos": "top", "team_nm" : "North Carolina State", "rgn_nm" : "main"}
+, {"matchup": 5, "seed" : 5, "team_pos": "bot", "team_nm" : "Virginia Tech", "rgn_nm" : "main"}
+, {"matchup": 6, "seed" : 6, "team_pos": "bot", "team_nm" : "Pittsburgh", "rgn_nm" : "main"}
+, {"matchup": 7, "seed" : 7, "team_pos": "top", "team_nm" : "Boston College", "rgn_nm" : "main"}
+, {"matchup": 4, "seed" : 8, "team_pos": "bot", "team_nm" : "Duke", "rgn_nm" : "main"}
 ]
 
 matchup_order = [4, 2, 1, 5, 6, 3, 7]
@@ -25,37 +25,65 @@ function display_cur_ts() {
 }
 
 function crt_bracket () {
-    //console.log(_.keys(_.countBy(data, function(data) { return data.name; })));
-    console.log(data.length);
     //figure out how to run the matchups in the right order
     //for now using scrappy way of hard-coding
+    var bracket_html = ''
     var matchup_cnt = matchup_order.length
     matchup_order.forEach(
         function (item, index, array) {
+            cur_matchup = [[], []]
             console.log(item, index, array);
             if (item >= matchup_cnt / 2) {
                 console.log('Yes')
+                data.forEach(
+                    function (row, idx, row_data) {
+                        if (item == row['matchup']) {
+                            if (row['team_pos'] == 'bot') {
+                                cur_matchup[1].push(row['matchup'], row['seed'], row['team_nm'])
+                            }
+                            else {
+                                cur_matchup[0].push(row['matchup'], row['seed'], row['team_nm'])
+                            }
+                        }
+                    }
+                )
+                bracket_html += '<div class = "r1">'
+                bracket_html += '   <div class = "matchup" id = "' + cur_matchup[0][0] + '">'
+                bracket_html += '       <div class = "team" id = "' + cur_matchup[0][0] + 'Top">'
+                bracket_html += '           <div class = "seed"> ' + cur_matchup[0][1] + ' </div>'
+                //need parent id here......
+                bracket_html += '           <input type = "text" class = "team-name winner" onclick="select_winner(2)" value = "' + cur_matchup[0][2] + ' " readonly>'
+                bracket_html += '       </div>'
+
+                bracket_html += '       <div class = "team" id = "' + cur_matchup[1][0] + 'Bot">'
+                bracket_html += '           <div class = "seed"> ' + cur_matchup[1][1] + ' </div>'
+                //need parent id here......
+                bracket_html += '           <input type = "text" class = "team-name winner" onclick="select_winner(2)" value = "' + cur_matchup[1][2] + ' " readonly>'
+                bracket_html += '       </div>'
+                bracket_html += '    </div>' //close the matchup
+                bracket_html += '</div>' //close the round
             }
             else {
-                console.log('No')
-            }
-            data.forEach(
-                function (row, idx, row_data) {
-                    console.log(row, idx, row_data);
+                console.log('No');
+                console.log(matchup_cnt / item);
+                //need to determine the round number in a dynamic way
+                //starting with scrappy solution
+                var round_nbr = 2;
+                if (item == 1) {
+                    round_nbr = 3
                 }
-            )
+                bracket_html += '<div class = "r' + round_nbr + '">'
+                bracket_html += '    <div class = "matchup" id = "' + item + '">'
+                bracket_html += '        <div class = "team" id = "' + item + 'Top"></div>'
+                bracket_html += '        <div class = "team" id = "' + item + 'Bot"></div>'
+                bracket_html += '   </div>' //close the matchup
+                bracket_html += '</div>' //close the round
+            }
+            
         }
     )
-    for (i = 0; i < matchup_order.length; i++) {
-        console.log('Test Here');
-
-
-    }
-    //for (const [key, value] of Object.entries(data)) {
-    //    console.log(value['matchup']);
-    //    console.log(key);
-    //    console.log(key, value);
-    //}
+    console.log(bracket_html);
+    document.getElementById("bracket_two").innerHTML += bracket_html;
 }
 
 function select_winner(dest_id) {
