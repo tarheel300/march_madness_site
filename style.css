@@ -47,6 +47,15 @@ input[type="text"]:focus {
     DEBUG*/
 }
 
+.bracket_col {
+    display: grid;
+    grid-template-columns: 220px 220px 220px;
+    grid-template-rows: 60px 60px 60px 60px;
+    grid-auto-flow: column;
+    grid-auto-columns: ;
+    background-color: #8db5da;
+}
+
 .matchup {
     background-color: #DAD9D8;
     width: 200px;
