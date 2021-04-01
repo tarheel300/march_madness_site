@@ -94,71 +94,9 @@ function crt_bracket_col() {
         }
     }
     //console.log(bracket_col_html);
-    document.getElementById("bracket_three").innerHTML += bracket_col_html;
-    document.getElementById("bracket_three").innerHTML += bracket_col_2_html;
-    document.getElementById("bracket_three").innerHTML += bracket_col_3_html;
-}
-
-function crt_bracket () {
-    //figure out how to run the matchups in the right order
-    //for now using scrappy way of hard-coding
-    var bracket_html = ''
-    var matchup_cnt = matchup_order.length
-    matchup_order.forEach(
-        function (item, index, array) {
-            cur_matchup = [[], []]
-            //console.log(item, index, array);
-            if (item >= matchup_cnt / 2) {
-                //console.log('Yes')
-                data.forEach(
-                    function (row, idx, row_data) {
-                        if (item == row['matchup']) {
-                            if (row['team_pos'] == 'bot') {
-                                cur_matchup[1].push(row['matchup'], row['seed'], row['team_nm'])
-                            }
-                            else {
-                                cur_matchup[0].push(row['matchup'], row['seed'], row['team_nm'])
-                            }
-                        }
-                    }
-                )
-                bracket_html += '<div class = "r1">'
-                bracket_html += '   <div class = "matchup" id = "' + cur_matchup[0][0] + '">'
-                bracket_html += '       <div class = "team" id = "' + cur_matchup[0][0] + 'Top">'
-                bracket_html += '           <div class = "seed"> ' + cur_matchup[0][1] + ' </div>'
-                //need parent id here......
-                bracket_html += '           <input type = "text" class = "team-name winner" onclick="select_winner(2)" value = "' + cur_matchup[0][2] + ' " readonly>'
-                bracket_html += '       </div>'
-
-                bracket_html += '       <div class = "team" id = "' + cur_matchup[1][0] + 'Bot">'
-                bracket_html += '           <div class = "seed"> ' + cur_matchup[1][1] + ' </div>'
-                //need parent id here......
-                bracket_html += '           <input type = "text" class = "team-name winner" onclick="select_winner(2)" value = "' + cur_matchup[1][2] + ' " readonly>'
-                bracket_html += '       </div>'
-                bracket_html += '    </div>' //close the matchup
-                bracket_html += '</div>' //close the round
-            }
-            else {
-                //console.log('No');
-                //console.log(matchup_cnt / item);
-                //need to determine the round number in a dynamic way
-                //starting with scrappy solution
-                var round_nbr = 2;
-                if (item == 1) {
-                    round_nbr = 3
-                }
-                bracket_html += '<div class = "r' + round_nbr + '">'
-                bracket_html += '    <div class = "matchup" id = "' + item + '">'
-                bracket_html += '        <div class = "team" id = "' + item + 'Top"></div>'
-                bracket_html += '        <div class = "team" id = "' + item + 'Bot"></div>'
-                bracket_html += '   </div>' //close the matchup
-                bracket_html += '</div>' //close the round
-            }
-            
-        }
-    )
-    //console.log(bracket_html);
-    document.getElementById("bracket_two").innerHTML += bracket_html;
+    document.getElementById("bracket").innerHTML += bracket_col_html;
+    document.getElementById("bracket").innerHTML += bracket_col_2_html;
+    document.getElementById("bracket").innerHTML += bracket_col_3_html;
 }
 
 function select_winner(dest_id) {
@@ -187,7 +125,6 @@ function select_winner(dest_id) {
 
 function on_load() {
     display_cur_ts();
-    crt_bracket();
     crt_bracket_col();
 }
 
