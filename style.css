@@ -32,19 +32,12 @@ input[type="text"]:focus {
 }
 
 /*=================GRID SECTION=================*/
-/*Putting to g*/
 .bracket {
     display: grid;
     grid-template-columns: 220px 220px 220px;
     grid-template-rows: 60px 60px 60px 60px;
+    grid-auto-flow: column;
     background-color: #8db5da;
-    /*DEBUG
-    background-color: red;
-    border-width: 2px;
-    border-color: black;
-    border-style: dashed;
-    margin: 10px;
-    DEBUG*/
 }
 
 .matchup {
