@@ -1,6 +1,6 @@
 /*Removed all existing stuff*/
 
-.bracket {
+#bracket {
     background-color: lightblue;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
