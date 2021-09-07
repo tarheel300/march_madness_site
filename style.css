@@ -2,4 +2,5 @@
 
 .bracket {
     background-color: lightblue;
+    display: grid;
 }
