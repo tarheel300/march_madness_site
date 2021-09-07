@@ -5,3 +5,15 @@
     display: grid;
     grid-template-columns: repeat(3, 1fr);
 }
+
+#f4l {
+    background-color: blue;
+}
+
+#champ {
+    background-color: red;
+}
+
+#f4r {
+    background-color: green;
+}
