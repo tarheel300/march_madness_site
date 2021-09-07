@@ -1,16 +1,13 @@
-/*Removed all existing stuff*/
-
 #bracket {
     background-color: lightblue;
     display: grid;
     height: 250px;
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: 100px;
+    grid-template-columns: 200px 200px 200px; /*Need to figure out alignment around contained grid sizes*/
+    grid-template-rows: 60px 60px 60px;
+    grid-gap: 20px;
 }
 
-#f4l {
-    background-color: blue;
-}
+/*#f4l {background-color: blue;}*/
 
 #champ {
     background-color: red;
@@ -18,4 +15,37 @@
 
 #f4r {
     background-color: green;
+}
+
+.matchup {
+    display: grid;
+    background-color: orange;
+    grid-template-columns: 40px 120px 40px;
+    grid-template-rows: 30px 30px;
+    align-items: center;
+    border-radius: 20px;
+}
+
+.matchup.right {
+    direction: rtl;
+}
+
+.seed {
+    text-align: center;
+}
+
+.team {
+    text-align: left;
+}
+
+.score {
+    text-align: center;
+}
+
+.winner {
+    font-weight: bold;
+}
+
+p {
+    font-family: 'Courier New', Courier, monospace;
 }
