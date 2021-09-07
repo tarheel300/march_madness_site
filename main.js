@@ -1,3 +1,5 @@
+//Deprecating for the time being. Focusing Just on HTML / CSS until I get a good setup, and then add in complexity with JS.
+
 console.log("I'm Running.");
 
 data = [{"matchup": 4, "seed" : 1, "team_pos": "top", "team_nm" : "North Carolina", "rgn_nm" : "main"}
