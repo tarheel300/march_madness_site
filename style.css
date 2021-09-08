@@ -1,32 +1,32 @@
 #bracket {
     background-color: lightblue;
     display: grid;
-    height: 250px;
-    grid-template-columns: 200px 200px 200px; /*Need to figure out alignment around contained grid sizes*/
-    grid-template-rows: 60px 60px 60px;
+    height: 400px;
+    grid-template-columns: repeat(7, 140px); /*Need to figure out alignment around contained grid sizes*/
+    align-content: center;
+    justify-content: center;
     grid-gap: 20px;
+}
+
+.bracket_column {
+    display: grid;
+    align-items: center;
+    height: inherit; /*Why does this change behavior of center on this column of grid, and the behavior of other columns?*/
 }
 
 /*#f4l {background-color: blue;}*/
 
-#champ {
-    background-color: red;
-}
-
-#f4r {
-    background-color: green;
-}
-
 .matchup {
     display: grid;
     background-color: orange;
-    grid-template-columns: 40px 120px 40px;
-    grid-template-rows: 30px 30px;
+    grid-template-columns: 20px 100px 20px;
+    grid-template-rows: repeat(2, 20px);
     align-items: center;
-    border-radius: 20px;
+    border-radius: 10px;
+    height: 40px;
 }
 
-.matchup.right {
+.right {
     direction: rtl;
 }
 
@@ -48,4 +48,19 @@
 
 p {
     font-family: 'Courier New', Courier, monospace;
+    font-size: 11px;
+}
+
+header {
+    border: 3px;
+    border-color: black;
+    background-color: coral;
+    height: 100px;
+}
+
+footer {
+    border: 3px;
+    border-color: black;
+    background-color:darkturquoise;
+    height: 100px;
 }
