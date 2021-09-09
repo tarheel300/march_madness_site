@@ -1,5 +1,5 @@
 #bracket {
-    background-color: lightblue;
+    background-color: #FFFFFF;
     display: grid;
     height: 900px;
     grid-template-columns: repeat(11, 140px); /*Need to figure out alignment around contained grid sizes*/
@@ -18,6 +18,8 @@
 
 .matchup {
     display: grid;
+    background-image: radial-gradient(#FFFFFF, #62C6F2 250px);
+    box-shadow: 2px 2px #F0F0F0;
     background-color: orange;
     grid-template-columns: 20px 100px 20px;
     grid-template-rows: repeat(2, 20px);
