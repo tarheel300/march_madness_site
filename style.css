@@ -66,3 +66,13 @@ footer {
     background-color:darkturquoise;
     height: 100px;
 }
+
+.navbar {
+    overflow: hidden;
+    background-color: black;
+}
+
+.navbar a {
+    background-color: black;
+    color: white;
+}
