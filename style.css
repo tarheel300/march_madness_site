@@ -69,9 +69,14 @@ footer {
     height: 100px;
 }
 
+.navbar_filler {
+    height: 80%;
+}
+
 .navbar {
     overflow: hidden;
     background-color: black;
+    height: 20px;
 }
 
 .navbar a {
