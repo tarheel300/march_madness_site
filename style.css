@@ -58,6 +58,8 @@ header {
     border-color: black;
     background-color: coral;
     height: 100px;
+    background-image: url('./images/carolina_bball_court_logo.jpg');
+    background-size: 250px;
 }
 
 footer {
