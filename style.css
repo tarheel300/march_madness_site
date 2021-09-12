@@ -6,6 +6,7 @@
     align-content: center;
     justify-content: center;
     grid-gap: 20px;
+    width: 1800px;
 }
 
 .bracket_column {
@@ -82,4 +83,9 @@ footer {
 .navbar a {
     background-color: black;
     color: white;
+}
+
+body {
+    background-color: #62C6F2;
+    width: 1800px;
 }
