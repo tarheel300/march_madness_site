@@ -21,7 +21,6 @@
     display: grid;
     background-image: radial-gradient(#FFFFFF, #62C6F2 250px);
     box-shadow: 2px 2px #F0F0F0;
-    background-color: orange;
     grid-template-columns: 20px 100px 20px;
     grid-template-rows: repeat(2, 20px);
     align-items: center;
@@ -46,7 +45,7 @@
 }
 
 .winner {
-    font-weight: bold;
+    font-weight: bolder;
 }
 
 p {
@@ -83,9 +82,12 @@ footer {
 .navbar a {
     background-color: black;
     color: white;
+    padding-right: 25px;
+    padding-left: 25px;
 }
 
 body {
     background-color: #62C6F2;
     width: 1800px;
+    justify-content: center;
 }
