@@ -1,5 +1,9 @@
 console.log("I'm Running.");
 
+function test_me() {
+    alert("I kicked off!")
+}
+
 function my_first_function() {
     alert("Go Heels!")
 }
