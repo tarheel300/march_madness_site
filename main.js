@@ -2,6 +2,13 @@ console.log("I'm Running.");
 
 let test_me = () => alert("I kicked off! Arrow!");
 
+let my_first_obj = new Object();
+
+my_first_obj['name'] = 'Object Name';
+my_first_obj['attrib'] = 'Something';
+
+alert(my_first_obj.name)
+
 function my_first_function() {
     alert("Go Heels!")
 }
