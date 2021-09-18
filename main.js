@@ -1,5 +1,5 @@
 console.log("I'm Running.");
-
+/*
 let test_me = () => alert("I kicked off! Arrow!");
 
 let my_first_obj = new Object();
@@ -8,9 +8,21 @@ my_first_obj['name'] = 'Object Name';
 my_first_obj['attrib'] = 'Something';
 
 alert(my_first_obj.name)
-
+*/
+/*
 function my_first_function() {
     alert("Go Heels!")
+}
+*/
+
+const brkt_rslts_2021 = `{
+                                "test": 123,
+                                "seed_nbr": 1
+                            }`;
+
+function load_json() {
+    let brkt_rslts = brkt_rslts_2021;
+    console.log(JSON.parse(brkt_rslts));
 }
 
 function display_cur_ts() {
