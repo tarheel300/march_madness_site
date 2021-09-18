@@ -23,6 +23,11 @@ const brkt_rslts_2021 = `{
 function load_json() {
     let brkt_rslts = brkt_rslts_2021;
     console.log(JSON.parse(brkt_rslts));
+    let test_nbr = brkt_rslts['test'];
+    let para = document.createElement("p");
+    let test_nbr_lbl = document.createTextNode('this is my test');
+    para.appendChild(test_nbr_lbl);
+    document.getElementById("add_here").appendChild(para);
 }
 
 function display_cur_ts() {
