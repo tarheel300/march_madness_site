@@ -15,17 +15,12 @@ function my_first_function() {
 }
 */
 
-const brkt_rslts_2021 = `{
-                                "test": 123,
-                                "seed_nbr": 1
-                            }`;
+const brkt_rslts_2021 = `{"test": {"a": 123, "b": 234},"seed_nbr": 1}`;
 
 function load_json() {
-    let brkt_rslts = brkt_rslts_2021;
-    console.log(JSON.parse(brkt_rslts));
-    let test_nbr = brkt_rslts['test'];
+    let brkt_rslts = JSON.parse(brkt_rslts_2021);
     let para = document.createElement("p");
-    let test_nbr_lbl = document.createTextNode('this is my test');
+    let test_nbr_lbl = document.createTextNode(brkt_rslts.test['a']);
     para.appendChild(test_nbr_lbl);
     document.getElementById("add_here").appendChild(para);
 }
