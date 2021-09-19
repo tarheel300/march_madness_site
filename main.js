@@ -15,9 +15,13 @@ function my_first_function() {
 }
 */
 
-const brkt_rslts_2021 = `{"t64": {"seed": 1, "team": "Gonzaga", "score": 98}}`;
+const brkt_rslts_2021 = `{"64": {"seed": 1, "team": "Gonzaga", "score": 98, "winner": true}
+                            , "66": {"seed": 16, "team": "Norfolk State", "score": 55, "winner": false}
+                            , "65": {"seed": 1, "team": "Baylor", "score": 79, "winner": true}
+                        }`;
 
 function load_json() {
+    /*
     let brkt_rslts = JSON.parse(brkt_rslts_2021);
     let para = document.createElement("p");
     para.classList.add('seed');
@@ -35,6 +39,15 @@ function load_json() {
     para.appendChild(document.createTextNode(brkt_rslts.t64['score']));
     para.classList.add()
     document.getElementById("add_here").appendChild(para);
+    */
+
+    let winner = null
+    let brkt = JSON.parse(brkt_rslts_2021);
+    for (key in brkt) {
+        console.log(key);
+        winner = brkt[key]['winner'];
+        console.log(winner);
+    }
 }
 
 function display_cur_ts() {
