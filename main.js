@@ -15,13 +15,25 @@ function my_first_function() {
 }
 */
 
-const brkt_rslts_2021 = `{"test": {"a": 123, "b": 234},"seed_nbr": 1}`;
+const brkt_rslts_2021 = `{"t64": {"seed": 1, "team": "Gonzaga", "score": 98}}`;
 
 function load_json() {
     let brkt_rslts = JSON.parse(brkt_rslts_2021);
     let para = document.createElement("p");
-    let test_nbr_lbl = document.createTextNode(brkt_rslts.test['a']);
-    para.appendChild(test_nbr_lbl);
+    para.classList.add('seed');
+    para.appendChild(document.createTextNode(brkt_rslts.t64['seed']));
+    document.getElementById("add_here").appendChild(para);
+
+    para = document.createElement("p");
+    para.classList.add('team');
+    para.appendChild(document.createTextNode(brkt_rslts.t64['team']));
+    document.getElementById("add_here").appendChild(para);
+    
+    para = document.createElement("p");
+    para.classList.add('score');
+    console.log(para.classList)
+    para.appendChild(document.createTextNode(brkt_rslts.t64['score']));
+    para.classList.add()
     document.getElementById("add_here").appendChild(para);
 }
 
@@ -56,4 +68,4 @@ function select_winner(dest_id) {
     //document.getElementById(dest_id).appendChild(p);
 }
 
-$(document).ready(display_cur_ts())
+$(document).ready()
