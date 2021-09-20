@@ -18,6 +18,13 @@ function my_first_function() {
 const brkt_rslts_2021 = `{"64": {"seed": 1, "team": "Gonzaga", "score": 98, "winner": true}
                             , "66": {"seed": 16, "team": "Norfolk State", "score": 55, "winner": false}
                             , "65": {"seed": 1, "team": "Baylor", "score": 79, "winner": true}
+                            , "1": {"seed": 1, "team": "Baylor", "score": 86, "winner": true}
+                            , "3": {"seed": 1, "team": "Baylor", "score": 86, "winner": true}
+                            , "2": {"seed": 1, "team": "Gonzaga", "score": 70, "winner": false}
+                            , "4": {"seed": 1, "team": "Gonzaga", "score": 93, "winner": true}
+                            , "5": {"seed": 1, "team": "Baylor", "score": 78, "winner": true}
+                            , "6": {"seed": 11, "team": "UCLA", "score": 90, "winner": false}
+                            , "7": {"seed": 2, "team": "Houston", "score": 59, "winner": false}
                         }`;
 
 function load_json() {
@@ -81,4 +88,4 @@ function select_winner(dest_id) {
     //document.getElementById(dest_id).appendChild(p);
 }
 
-$(document).ready()
+//$(document).ready()
