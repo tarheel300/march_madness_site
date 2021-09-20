@@ -28,25 +28,6 @@ const brkt_rslts_2021 = `{"64": {"seed": 1, "team": "Gonzaga", "score": 98, "win
                         }`;
 
 function load_json() {
-    /*
-    let brkt_rslts = JSON.parse(brkt_rslts_2021);
-    let para = document.createElement("p");
-    para.classList.add('seed');
-    para.appendChild(document.createTextNode(brkt_rslts.t64['seed']));
-    document.getElementById("add_here").appendChild(para);
-
-    para = document.createElement("p");
-    para.classList.add('team');
-    para.appendChild(document.createTextNode(brkt_rslts.t64['team']));
-    document.getElementById("add_here").appendChild(para);
-    
-    para = document.createElement("p");
-    para.classList.add('score');
-    console.log(para.classList)
-    para.appendChild(document.createTextNode(brkt_rslts.t64['score']));
-    para.classList.add()
-    document.getElementById("add_here").appendChild(para);
-    */
 
     let seed = null;
     let team = null;
@@ -56,6 +37,8 @@ function load_json() {
     let winner_class = null;
     let brkt_teams_dict = {};
     let brkt = JSON.parse(brkt_rslts_2021);
+
+    //creating HTML for each of the teams involved, with seed / team / score & if they won
     for (key in brkt) {
         [seed, team, score, winner] = [brkt[key]['seed'], brkt[key]['team'], brkt[key]['score'], brkt[key]['winner']];
         winner_class = (winner === true) ? ' winner' : ''
@@ -64,8 +47,46 @@ function load_json() {
         game_html += `\n<p class = "score${winner_class}">${score}</p>`
         brkt_teams_dict[key] = game_html
     }
-    //console.log(brkt_teams_dict);
-    document.getElementById("bracket_js").innerHTML += brkt_teams_dict[1];
+
+    let matchup_html = null
+    let matchup_nbr = null
+    let matchup_dict = {}
+    let mod_4 = null
+    let mod_2 = null
+    for (team_game in brkt_teams_dict) {
+        mod_4 = team_game % 4;
+        mod_2 = team_game % 2;
+
+        //purposefully leaving out ID 1, will add "Champion" image / call out later
+        if(+team_game == 1) {
+            continue;
+        }
+        
+        //determining which team_game it would be feeding into & calling that a matchup number
+        if (team_game < 4) {
+            matchup_nbr = 1;
+        } else if (mod_2 == 0)  {
+            matchup_nbr = (mod_4 == 2) ? (team_game - 2) / 2 : team_game / 2;
+        } else {
+            matchup_nbr = (mod_4 == 3) ? (team_game - 1) / 2 : (+team_game + 1) / 2;
+        }
+
+        //determining which team_game it would be feeding into & calling that a matchup number
+        if (team_game < 4) {
+            matchup_nbr = 1;
+        } else if (mod_4 <= 1)  {
+            matchup_html = "<div class = matchup>\n";
+            matchup_html += brkt_teams_dict[team_game];
+            matchup_dict[matchup_nbr] = matchup_html;
+        } else {
+            matchup_html = `\n`;
+            matchup_html += brkt_teams_dict[team_game];
+            matchup_html += `\n</div>`;
+            matchup_dict[matchup_nbr] = matchup_dict[matchup_nbr] + matchup_html; 
+        }
+
+    }
+    document.getElementById("bracket_js").innerHTML += matchup_dict[2];
 }
 
 function display_cur_ts() {
@@ -99,4 +120,4 @@ function select_winner(dest_id) {
     //document.getElementById(dest_id).appendChild(p);
 }
 
-//$(document).ready()
+//$(document).ready() //learned this is specifically for jQuery - more to come later.
