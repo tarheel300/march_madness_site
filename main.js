@@ -48,13 +48,24 @@ function load_json() {
     document.getElementById("add_here").appendChild(para);
     */
 
-    let winner = null
+    let seed = null;
+    let team = null;
+    let score = null;
+    let winner = null;
+    let game_html = null;
+    let winner_class = null;
+    let brkt_teams_dict = {};
     let brkt = JSON.parse(brkt_rslts_2021);
     for (key in brkt) {
-        console.log(key);
-        winner = brkt[key]['winner'];
-        console.log(winner);
+        [seed, team, score, winner] = [brkt[key]['seed'], brkt[key]['team'], brkt[key]['score'], brkt[key]['winner']];
+        winner_class = (winner === true) ? ' winner' : ''
+        game_html = `<p class = "seed${winner_class}">${seed}</p>`
+        game_html += `\n<p class = "team${winner_class}">${team}</p>`
+        game_html += `\n<p class = "score${winner_class}">${score}</p>`
+        brkt_teams_dict[key] = game_html
     }
+    //console.log(brkt_teams_dict);
+    document.getElementById("bracket_js").innerHTML += brkt_teams_dict[1];
 }
 
 function display_cur_ts() {
