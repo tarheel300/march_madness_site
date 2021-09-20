@@ -71,7 +71,7 @@ function load_json() {
             matchup_nbr = (mod_4 == 3) ? (team_game - 1) / 2 : (+team_game + 1) / 2;
         }
 
-        //determining which team_game it would be feeding into & calling that a matchup number
+        //putting together the matchup HTML, in a dict with the team_game it feeds into as the key
         if (team_game < 4) {
             matchup_nbr = 1;
         } else if (mod_4 <= 1)  {
