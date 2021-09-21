@@ -247,7 +247,6 @@ function load_json() {
 
     //close out the div on each column, add the column into the bracket.
     for (col in brkt_cols_dict) {
-        console.log(col);
         brkt_cols_dict[col_key] = brkt_cols_dict[col_key] + "\n</div>"
         document.getElementById("bracket_js").innerHTML += brkt_cols_dict[col];
     }
