@@ -26,29 +26,32 @@ const brkt_rslts_2021 = `{"1": {"seed": 1, "team": "Baylor", "score": 86, "winne
                             , "9": {"seed": 1, "team": "Baylor", "score": 81, "winner": true}
                             , "10": {"seed": 6, "team": "USC", "score": 66, "winner": false}
                             , "11": {"seed": 3, "team": "Arkansas", "score": 72, "winner": false}
-                            , "12": {"seed": 1, "team": "Michigan", "score": 76, "winner": true}
+                            , "12": {"seed": 1, "team": "Michigan", "score": 49, "winner": false}
                             , "13": {"seed": 12, "team": "Oregon State", "score": 61, "winner": false}
-                            , "14": {"seed": 4, "team": "Florida State", "score": 58, "winner": false}
+                            , "14": {"seed": 11, "team": "UCLA", "score": 51, "winner": true}
                             , "15": {"seed": 2, "team": "Houston", "score": 67, "winner": true}
 
-                            , "16": {"seed": 1, "team": "Baylor", "score": 86, "winner": true}
-                            , "17": {"seed": 1, "team": "Gonzaga", "score": 70, "winner": false}
-                            , "18": {"seed": 1, "team": "Baylor", "score": 86, "winner": true}
-                            , "19": {"seed": 1, "team": "Gonzaga", "score": 93, "winner": true}
-                            , "20": {"seed": 1, "team": "Baylor", "score": 78, "winner": true}
-                            , "21": {"seed": 11, "team": "UCLA", "score": 90, "winner": false}
-                            , "22": {"seed": 2, "team": "Houston", "score": 59, "winner": false}
-                            , "23": {"seed": 1, "team": "Gonzaga", "score": 85, "winner": true}
-                            , "24": {"seed": 1, "team": "Baylor", "score": 81, "winner": true}
-                            , "25": {"seed": 6, "team": "USC", "score": 66, "winner": false}
-                            , "26": {"seed": 3, "team": "Arkansas", "score": 72, "winner": false}
-                            , "27": {"seed": 1, "team": "Michigan", "score": 76, "winner": true}
-                            , "28": {"seed": 12, "team": "Oregon State", "score": 61, "winner": false}
-                            , "29": {"seed": 4, "team": "Florida State", "score": 58, "winner": false}
-                            , "30": {"seed": 2, "team": "Houston", "score": 67, "winner": true}
 
 
-                            , "31": {"seed": 1, "team": "Baylor", "score": 86, "winner": true}
+                            , "16": {"seed": 1, "team": "Gonzaga", "score": 83, "winner": true}
+                            , "17": {"seed": 1, "team": "Baylor", "score": 62, "winner": true}
+                            , "18": {"seed": 5, "team": "Creighton", "score": 65, "winner": false}
+                            , "19": {"seed": 5, "team": "Villanova", "score": 51, "winner": false}
+                            , "20": {"seed": 6, "team": "USC", "score": 82, "winner": true}
+                            , "21": {"seed": 3, "team": "Arkansas", "score": 72, "winner": true}
+                            , "22": {"seed": 7, "team": "Oregon", "score": 68, "winner": false}
+                            , "23": {"seed": 15, "team": "Oral Roberts", "score": 70, "winner": false}
+                            , "24": {"seed": 1, "team": "Michigan", "score": 76, "winner": true}
+                            , "25": {"seed": 8, "team": "Loyola Chicago", "score": 58, "winner": false}
+                            , "26": {"seed": 4, "team": "Florida State", "score": 58, "winner": false}
+                            , "27": {"seed": 12, "team": "Oregon State", "score": 65, "winner": true}
+                            , "28": {"seed": 11, "team": "UCLA", "score": 88, "winner": true}
+                            , "29": {"seed": 11, "team": "Syracuse", "score": 46, "winner": false}
+                            , "30": {"seed": 2, "team": "Alabama", "score": 78, "winner": false}
+                            , "31": {"seed": 2, "team": "Houston", "score": 62, "winner": true}
+
+
+                            
                             , "32": {"seed": 1, "team": "Gonzaga", "score": 70, "winner": false}
                             , "33": {"seed": 1, "team": "Baylor", "score": 86, "winner": true}
                             , "34": {"seed": 1, "team": "Gonzaga", "score": 93, "winner": true}
@@ -153,13 +156,13 @@ const brkt_rslts_2021 = `{"1": {"seed": 1, "team": "Baylor", "score": 86, "winne
 
 let brkt_cols_dict = {"r64l": "<div id = \"r64l\" class = \"bracket_column\">"
                     , "r32l": "<div id = \'r32l\' class = \'bracket_column\'>"
-                    , "r16l": "<div id = \'r16l\' class = \'bracket_column\'>"
+                    , "s16l": "<div id = \'r16l\' class = \'bracket_column\'>"
                     , "e8l": "<div id = \'e8l\' class = \'bracket_column\'>"
                     , "f4l": "<div id = \'f4l\' class = \'bracket_column\'>"
                     , "champ": "<div id = \'champ\' class = \'bracket_column\'>"
                     , "f4r": "<div id = \'f4l\' class = \'bracket_column right\'>"
                     , "e8r": "<div id = \'e8l\' class = \'bracket_column right\'>"
-                    , "r16r": "<div id = \'r16l\' class = \'bracket_column right\'>"
+                    , "s16r": "<div id = \'r16l\' class = \'bracket_column right\'>"
                     , "r32r": "<div id = \'r32l\' class = \'bracket_column right\'>"
                     , "r64r": "<div id = \'r64l\' class = \'bracket_column right\'>"
                 }
@@ -209,9 +212,24 @@ function load_json() {
         }
 
         //putting together the matchup HTML, in a dict with the team_game it feeds into as the key
-        if (team_game < 4) {
+        if (team_game == 1) {
+            continue;
+        } else if (+team_game < 4) {
             matchup_nbr = 1;
-        } else if (mod_4 <= 1)  {
+            switch (+team_game) {
+                case 2:
+                    matchup_html = "<div class = matchup>\n";
+                    matchup_html += brkt_teams_dict[team_game];
+                    matchup_dict[matchup_nbr] = matchup_html;
+                    break;
+                case 3:
+                    matchup_html = `\n`;
+                    matchup_html += brkt_teams_dict[team_game];
+                    matchup_html += `\n</div>`;
+                    matchup_dict[matchup_nbr] = matchup_dict[matchup_nbr] + matchup_html; 
+                    break;
+            }
+        } else if (mod_4 <= 1 && team_game >= 4)  {
             matchup_html = "<div class = matchup>\n";
             matchup_html += brkt_teams_dict[team_game];
             matchup_dict[matchup_nbr] = matchup_html;
@@ -224,8 +242,11 @@ function load_json() {
 
     }
 
+    console.log(matchup_dict[1]);
+
     let col_key = '';
     for (match in matchup_dict) {
+        console.log(match);
         mod_2 = match % 2;
         if (+match == 1) {
             col_key = 'champ'
@@ -240,9 +261,19 @@ function load_json() {
         } else if (+match < 64) {
             col_key = 'r64'
         } ;
-        col_key = col_key + ((mod_2 == 0) ? 'l' : 'r');
+
+        if (col_key == 'champ'){
+            //do nothing
+        } else if (mod_2 == 0) {
+            col_key += 'l';
+        } else {
+            col_key += 'r';
+        }
+        //col_key = col_key + ((mod_2 == 0) ? 'l' : 'r');
 
         brkt_cols_dict[col_key] = brkt_cols_dict[col_key] + "\n" + matchup_dict[match];
+        console.log(col_key);
+        //console.log(brkt_cols_dict[col_key]);
     }
 
     //close out the div on each column, add the column into the bracket.
