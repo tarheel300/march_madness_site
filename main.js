@@ -16,12 +16,15 @@ function my_first_function() {
 */
 
 const brkt_rslts_2021 = `{"1": {"seed": 1, "team": "Baylor", "score": 86, "winner": true}
+
                             , "2": {"seed": 1, "team": "Gonzaga", "score": 70, "winner": false}
                             , "3": {"seed": 1, "team": "Baylor", "score": 86, "winner": true}
+
                             , "4": {"seed": 1, "team": "Gonzaga", "score": 93, "winner": true}
                             , "5": {"seed": 1, "team": "Baylor", "score": 78, "winner": true}
                             , "6": {"seed": 11, "team": "UCLA", "score": 90, "winner": false}
                             , "7": {"seed": 2, "team": "Houston", "score": 59, "winner": false}
+
                             , "8": {"seed": 1, "team": "Gonzaga", "score": 85, "winner": true}
                             , "9": {"seed": 1, "team": "Baylor", "score": 81, "winner": true}
                             , "10": {"seed": 6, "team": "USC", "score": 66, "winner": false}
@@ -30,8 +33,6 @@ const brkt_rslts_2021 = `{"1": {"seed": 1, "team": "Baylor", "score": 86, "winne
                             , "13": {"seed": 12, "team": "Oregon State", "score": 61, "winner": false}
                             , "14": {"seed": 11, "team": "UCLA", "score": 51, "winner": true}
                             , "15": {"seed": 2, "team": "Houston", "score": 67, "winner": true}
-
-
 
                             , "16": {"seed": 1, "team": "Gonzaga", "score": 83, "winner": true}
                             , "17": {"seed": 1, "team": "Baylor", "score": 62, "winner": true}
@@ -50,46 +51,43 @@ const brkt_rslts_2021 = `{"1": {"seed": 1, "team": "Baylor", "score": 86, "winne
                             , "30": {"seed": 2, "team": "Alabama", "score": 78, "winner": false}
                             , "31": {"seed": 2, "team": "Houston", "score": 62, "winner": true}
 
-
-                            
-                            , "32": {"seed": 1, "team": "Gonzaga", "score": 70, "winner": false}
-                            , "33": {"seed": 1, "team": "Baylor", "score": 86, "winner": true}
-                            , "34": {"seed": 1, "team": "Gonzaga", "score": 93, "winner": true}
-                            , "35": {"seed": 1, "team": "Baylor", "score": 78, "winner": true}
-                            , "36": {"seed": 11, "team": "UCLA", "score": 90, "winner": false}
-                            , "37": {"seed": 2, "team": "Houston", "score": 59, "winner": false}
-                            , "38": {"seed": 1, "team": "Gonzaga", "score": 85, "winner": true}
-                            , "39": {"seed": 1, "team": "Baylor", "score": 81, "winner": true}
-                            , "40": {"seed": 6, "team": "USC", "score": 66, "winner": false}
-                            , "41": {"seed": 3, "team": "Arkansas", "score": 72, "winner": false}
-                            , "42": {"seed": 1, "team": "Michigan", "score": 76, "winner": true}
-                            , "43": {"seed": 12, "team": "Oregon State", "score": 61, "winner": false}
-                            , "44": {"seed": 4, "team": "Florida State", "score": 58, "winner": false}
-                            , "45": {"seed": 2, "team": "Houston", "score": 67, "winner": true}
-                            , "46": {"seed": 1, "team": "Baylor", "score": 86, "winner": true}
-                            , "47": {"seed": 1, "team": "Gonzaga", "score": 70, "winner": false}
-                            , "48": {"seed": 1, "team": "Baylor", "score": 86, "winner": true}
-                            , "49": {"seed": 1, "team": "Gonzaga", "score": 93, "winner": true}
-                            , "50": {"seed": 1, "team": "Baylor", "score": 78, "winner": true}
-                            , "51": {"seed": 11, "team": "UCLA", "score": 90, "winner": false}
-                            , "52": {"seed": 2, "team": "Houston", "score": 59, "winner": false}
-                            , "53": {"seed": 1, "team": "Gonzaga", "score": 85, "winner": true}
-                            , "54": {"seed": 1, "team": "Baylor", "score": 81, "winner": true}
-                            , "55": {"seed": 6, "team": "USC", "score": 66, "winner": false}
-                            , "56": {"seed": 3, "team": "Arkansas", "score": 72, "winner": false}
-                            , "57": {"seed": 1, "team": "Michigan", "score": 76, "winner": true}
-                            , "58": {"seed": 12, "team": "Oregon State", "score": 61, "winner": false}
-                            , "59": {"seed": 4, "team": "Florida State", "score": 58, "winner": false}
-                            , "60": {"seed": 2, "team": "Houston", "score": 67, "winner": true}
-                            , "61": {"seed": 1, "team": "Michigan", "score": 76, "winner": true}
-                            , "62": {"seed": 12, "team": "Oregon State", "score": 61, "winner": false}
-                            , "63": {"seed": 4, "team": "Florida State", "score": 58, "winner": false}
+                            , "32": {"seed": 1, "team": "Gonzaga", "score": 83, "winner": true}
+                            , "33": {"seed": 1, "team": "Baylor", "score": 76, "winner": true}
+                            , "34": {"seed": 8, "team": "Oklahoma", "score": 87, "winner": false}
+                            , "35": {"seed": 9, "team": "Wisconsin", "score": 63, "winner": false}
+                            , "36": {"seed": 5, "team": "Creighton", "score": 72, "winner": true}
+                            , "37": {"seed": 5, "team": "Villanova", "score": 84, "winner": true}
+                            , "38": {"seed": 13, "team": "Ohio", "score": 58, "winner": false}
+                            , "39": {"seed": 13, "team": "North Texas", "score": 61, "winner": false}
+                            , "40": {"seed": 6, "team": "USC", "score": 85, "winner": true}
+                            , "41": {"seed": 6, "team": "Texas Tech", "score": 66, "winner": false}
+                            , "42": {"seed": 3, "team": "Kansas State", "score": 51, "winner": false}
+                            , "43": {"seed": 3, "team": "Arkansas", "score": 68, "winner": true}
+                            , "44": {"seed": 7, "team": "Oregon", "score": 95, "winner": true}
+                            , "45": {"seed": 7, "team": "Florida", "score": 78, "winner": false}
+                            , "46": {"seed": 2, "team": "Iowa", "score": 80, "winner": false}
+                            , "47": {"seed": 15, "team": "Oral Roberts", "score": 81, "winner": true}
+                            , "48": {"seed": 1, "team": "Michigan", "score": 86, "winner": true}
+                            , "49": {"seed": 1, "team": "Illinois", "score": 58, "winner": false}
+                            , "50": {"seed": 8, "team": "LSU", "score": 78, "winner": false}
+                            , "51": {"seed": 8, "team": "Loyola Chicago", "score": 71, "winner": true}
+                            , "52": {"seed": 5, "team": "Colorado", "score": 53, "winner": false}
+                            , "53": {"seed": 12, "team": "Oregon State", "score": 80, "winner": true}
+                            , "54": {"seed": 4, "team": "Florida State", "score": 71, "winner": true}
+                            , "55": {"seed": 4, "team": "Oklahoma State", "score": 70, "winner": false}
+                            , "56": {"seed": 11, "team": "UCLA", "score": 67, "winner": true}
+                            , "57": {"seed": 11, "team": "Syracuse", "score": 75, "winner": true}
+                            , "58": {"seed": 14, "team": "Abilene Chrstn", "score": 47, "winner": false}
+                            , "59": {"seed": 3, "team": "West Virginia", "score": 72, "winner": false}
+                            , "60": {"seed": 10, "team": "Maryland", "score": 77, "winner": false}
+                            , "61": {"seed": 10, "team": "Rutgers", "score": 60, "winner": false}
+                            , "62": {"seed": 2, "team": "Alabama", "score": 96, "winner": true}
+                            , "63": {"seed": 2, "team": "Houston", "score": 63, "winner": true}
 
 
                             , "64": {"seed": 1, "team": "Gonzaga", "score": 98, "winner": true}
                             , "66": {"seed": 16, "team": "Norfolk State", "score": 55, "winner": false}
                             , "65": {"seed": 1, "team": "Baylor", "score": 79, "winner": true}
-
                             , "66": {"seed": 1, "team": "Baylor", "score": 86, "winner": true}
                             , "67": {"seed": 1, "team": "Gonzaga", "score": 70, "winner": false}
                             , "68": {"seed": 1, "team": "Baylor", "score": 86, "winner": true}
