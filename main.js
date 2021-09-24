@@ -274,6 +274,10 @@ function load_json() {
     //document.getElementById("bracket_js").innerHTML += matchup_dict[2];
 }
 
+function brk_rslt_select() {
+    alert('Hello!');
+}
+
 function display_cur_ts() {
     var current_time = new Date();
     var current_year = current_time.getFullYear();
