@@ -275,7 +275,11 @@ function load_json() {
 }
 
 function brk_rslt_select() {
-    alert('Hello!');
+  
+    let dd_sel = document.getElementById("myList");
+    let dd_val = dd_sel.options[dd_sel.selectedIndex].value;
+
+    alert(`Hello! ${dd_val}`);
 }
 
 function display_cur_ts() {
