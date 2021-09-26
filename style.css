@@ -1,5 +1,14 @@
+:root {
+    --bg_clr_main:  #363636;
+    --bg_brkt_clr: #363636;
+    --fg_clr_main: #53B3FF;
+    --ftr_clr: #363636;
+    --hdr_clr: #363636;
+    --brdr_clr: white;
+}
+
 #bracket {
-    background-color: #FFFFFF;
+    background-color: var(--bg_brkt_clr);
     display: grid;
     height: 900px;
     grid-template-columns: repeat(11, 140px); /*Need to figure out alignment around contained grid sizes*/
@@ -19,7 +28,7 @@
 
 .matchup {
     display: grid;
-    background-image: radial-gradient(#FFFFFF, #62C6F2 250px);
+    background-color: var(--fg_clr_main) ; /*radial-gradient(#FFFFFF, #62C6F2 250px);*/
     box-shadow: 2px 2px #F0F0F0;
     grid-template-columns: 20px 100px 20px;
     grid-template-rows: repeat(2, 20px);
@@ -55,8 +64,8 @@ p {
 
 header {
     border: 3px;
-    border-color: black;
-    background-color: coral;
+    border-color: var(--brdr_clr);
+    background-color: var(--hdr_clr);
     height: 100px;
     background-image: url('./images/carolina_bball_court_logo.jpg');
     background-size: 250px;
@@ -64,8 +73,8 @@ header {
 
 footer {
     border: 3px;
-    border-color: black;
-    background-color:darkturquoise;
+    border-color: var(--brdr_clr);
+    background-color: var(--ftr_clr);
     height: 100px;
 }
 
@@ -87,7 +96,8 @@ footer {
 }
 
 body {
-    background-color: #62C6F2;
+    background-color: var(--bg_clr_main);
     width: 1800px;
     justify-content: center;
 }
+
