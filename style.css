@@ -1,10 +1,13 @@
 :root {
-    --bg_clr_main:  #363636;
-    --bg_brkt_clr: #363636;
-    --fg_clr_main: #53B3FF;
-    --ftr_clr: #363636;
-    --hdr_clr: #363636;
-    --brdr_clr: white;
+    --bg_clr_main:  #EDEDED;
+    --bg_brkt_clr: #EDEDED;
+    --fg_clr_main: #7BAFD4;
+    --shdw_clr: #13294B;
+    --ftr_clr: #EDEDED;
+    --hdr_clr: #EDEDED;
+    --brdr_clr: #EDEDED;
+    --nav_menu_clr: #7BAFD4;
+    --nav_menu_fnt_clr: black;
 }
 
 #bracket {
@@ -29,7 +32,7 @@
 .matchup {
     display: grid;
     background-color: var(--fg_clr_main) ; /*radial-gradient(#FFFFFF, #62C6F2 250px);*/
-    box-shadow: 2px 2px #F0F0F0;
+    box-shadow: 2px 2px var(--shdw_clr);
     grid-template-columns: 20px 100px 20px;
     grid-template-rows: repeat(2, 20px);
     align-items: center;
@@ -84,13 +87,13 @@ footer {
 
 .navbar {
     overflow: hidden;
-    background-color: black;
+    background-color: var(--nav_menu_clr);
     height: 20px;
 }
 
 .navbar a {
-    background-color: black;
-    color: white;
+    background-color: var(--nav_menu_clr);
+    color: var(--nav_menu_fnt_clr);
     padding-right: 25px;
     padding-left: 25px;
 }
