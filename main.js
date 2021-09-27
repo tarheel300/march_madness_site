@@ -15,6 +15,13 @@ function my_first_function() {
 }
 */
 
+function test_rest_params (a, b, ...c) {
+    //validating the array creation
+    for (i in c) {
+        console.log(c[i]);
+    }
+}
+
 const brkt_rslts_2021 = `{"1": {"seed": 1, "team": "Baylor", "score": 86, "winner": true}
 
                             , "2": {"seed": 1, "team": "Gonzaga", "score": 70, "winner": false}
@@ -162,6 +169,8 @@ let brkt_cols_dict = {"r64l": "<div id = \"r64l\" class = \"bracket_column\">"
                 };
 
 function load_json() {
+
+    test_rest_params(1, 2, 3, 4, 5, 6);
 
     let seed = null;
     let team = null;
