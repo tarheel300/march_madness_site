@@ -169,119 +169,123 @@ let brkt_cols_dict = {"r64l": "<div id = \"r64l\" class = \"bracket_column\">"
                 };
 
 function load_json() {
+    try {
+        test_rest_params(1, 2, 3, 4, 5, 6);
 
-    test_rest_params(1, 2, 3, 4, 5, 6);
-
-    let seed = null;
-    let team = null;
-    let score = null;
-    let winner = null;
-    let game_html = null;
-    let winner_class = null;
-    let brkt_teams_dict = {};
-    let brkt = JSON.parse(brkt_rslts_2021);
-
-    //creating HTML for each of the teams involved, with seed / team / score & if they won
-    for (key in brkt) {
-        [seed, team, score, winner] = [brkt[key]['seed'], brkt[key]['team'], brkt[key]['score'], brkt[key]['winner']];
-        winner_class = (winner === true) ? ' winner' : ''
-        game_html = `<p class = "seed${winner_class}">${seed}</p>`
-        game_html += `\n<p class = "team${winner_class}">${team}</p>`
-        game_html += `\n<p class = "score${winner_class}">${score}</p>`
-        brkt_teams_dict[key] = game_html
-    }
-
-    let matchup_html = null
-    let matchup_nbr = null
-    let matchup_dict = {}
-    let mod_4 = null
-    let mod_2 = null
-    for (team_game in brkt_teams_dict) {
-        mod_4 = team_game % 4;
-        mod_2 = team_game % 2;
-
-        //purposefully leaving out ID 1, will add "Champion" image / call out in future versions
-        if(+team_game == 1) {
-            continue;
+        let seed = null;
+        let team = null;
+        let score = null;
+        let winner = null;
+        let game_html = null;
+        let winner_class = null;
+        let brkt_teams_dict = {};
+        let brkt = JSON.parse(brkt_rslts_2021);
+    
+        //creating HTML for each of the teams involved, with seed / team / score & if they won
+        for (key in brkt) {
+            [seed, team, score, winner] = [brkt[key]['seed'], brkt[key]['team'], brkt[key]['score'], brkt[key]['winner']];
+            winner_class = (winner === true) ? ' winner' : ''
+            game_html = `<p class = "seed${winner_class}">${seed}</p>`
+            game_html += `\n<p class = "team${winner_class}">${team}</p>`
+            game_html += `\n<p class = "score${winner_class}">${score}</p>`
+            brkt_teams_dict[key] = game_html
         }
-        
-        //determining which team_game it would be feeding into & calling that a matchup number
-        if (team_game < 4) {
-            matchup_nbr = 1;
-        } else if (mod_2 == 0)  {
-            matchup_nbr = (mod_4 == 2) ? (team_game - 2) / 2 : team_game / 2;
-        } else {
-            matchup_nbr = (mod_4 == 3) ? (team_game - 1) / 2 : (+team_game + 1) / 2;
-        }
-
-        //putting together the matchup HTML, in a dict with the team_game it feeds into as the key
-        if (team_game == 1) {
-            continue;
-        } else if (+team_game < 4) {
-            matchup_nbr = 1;
-            switch (+team_game) {
-                case 2:
-                    matchup_html = "<div class = matchup>\n";
-                    matchup_html += brkt_teams_dict[team_game];
-                    matchup_dict[matchup_nbr] = matchup_html;
-                    break;
-                case 3:
-                    matchup_html = `\n`;
-                    matchup_html += brkt_teams_dict[team_game];
-                    matchup_html += `\n</div>`;
-                    matchup_dict[matchup_nbr] = matchup_dict[matchup_nbr] + matchup_html; 
-                    break;
+    
+        let matchup_html = null
+        let matchup_nbr = null
+        let matchup_dict = {}
+        let mod_4 = null
+        let mod_2 = null
+        for (team_game in brkt_teams_dict) {
+            mod_4 = team_game % 4;
+            mod_2 = team_game % 2;
+    
+            //purposefully leaving out ID 1, will add "Champion" image / call out in future versions
+            if(+team_game == 1) {
+                continue;
             }
-        } else if (mod_4 <= 1 && team_game >= 4)  {
-            matchup_html = "<div class = matchup>\n";
-            matchup_html += brkt_teams_dict[team_game];
-            matchup_dict[matchup_nbr] = matchup_html;
-        } else {
-            matchup_html = `\n`;
-            matchup_html += brkt_teams_dict[team_game];
-            matchup_html += `\n</div>`;
-            matchup_dict[matchup_nbr] = matchup_dict[matchup_nbr] + matchup_html; 
+            
+            //determining which team_game it would be feeding into & calling that a matchup number
+            if (team_game < 4) {
+                matchup_nbr = 1;
+            } else if (mod_2 == 0)  {
+                matchup_nbr = (mod_4 == 2) ? (team_game - 2) / 2 : team_game / 2;
+            } else {
+                matchup_nbr = (mod_4 == 3) ? (team_game - 1) / 2 : (+team_game + 1) / 2;
+            }
+    
+            //putting together the matchup HTML, in a dict with the team_game it feeds into as the key
+            if (team_game == 1) {
+                continue;
+            } else if (+team_game < 4) {
+                matchup_nbr = 1;
+                switch (+team_game) {
+                    case 2:
+                        matchup_html = "<div class = matchup>\n";
+                        matchup_html += brkt_teams_dict[team_game];
+                        matchup_dict[matchup_nbr] = matchup_html;
+                        break;
+                    case 3:
+                        matchup_html = `\n`;
+                        matchup_html += brkt_teams_dict[team_game];
+                        matchup_html += `\n</div>`;
+                        matchup_dict[matchup_nbr] = matchup_dict[matchup_nbr] + matchup_html; 
+                        break;
+                }
+            } else if (mod_4 <= 1 && team_game >= 4)  {
+                matchup_html = "<div class = matchup>\n";
+                matchup_html += brkt_teams_dict[team_game];
+                matchup_dict[matchup_nbr] = matchup_html;
+            } else {
+                matchup_html = `\n`;
+                matchup_html += brkt_teams_dict[team_game];
+                matchup_html += `\n</div>`;
+                matchup_dict[matchup_nbr] = matchup_dict[matchup_nbr] + matchup_html; 
+            }
+    
         }
-
-    }
-
-    let col_key = '';
-    for (match in matchup_dict) {
-        mod_2 = match % 2;
-        if (+match == 1) {
-            col_key = 'champ'
-        } else if (+match < 4) {
-            col_key = 'f4'
-        } else if (+match < 8) {
-            col_key = 'e8'
-        } else if (+match < 16) {
-            col_key = 's16'
-        } else if (+match < 32) {
-            col_key = 'r32'
-        } else if (+match < 64) {
-            col_key = 'r64'
-        } ;
-
-        if (col_key == 'champ'){
-            //do nothing
-        } else if (mod_2 == 0) {
-            col_key += 'l';
-        } else {
-            col_key += 'r';
+    
+        let col_key = '';
+        for (match in matchup_dict) {
+            mod_2 = match % 2;
+            if (+match == 1) {
+                col_key = 'champ'
+            } else if (+match < 4) {
+                col_key = 'f4'
+            } else if (+match < 8) {
+                col_key = 'e8'
+            } else if (+match < 16) {
+                col_key = 's16'
+            } else if (+match < 32) {
+                col_key = 'r32'
+            } else if (+match < 64) {
+                col_key = 'r64'
+            } ;
+    
+            if (col_key == 'champ'){
+                //do nothing
+            } else if (mod_2 == 0) {
+                col_key += 'l';
+            } else {
+                col_key += 'r';
+            }
+            //col_key = col_key + ((mod_2 == 0) ? 'l' : 'r');
+    
+            brkt_cols_dict[col_key] = brkt_cols_dict[col_key] + "\n" + matchup_dict[match];
         }
-        //col_key = col_key + ((mod_2 == 0) ? 'l' : 'r');
-
-        brkt_cols_dict[col_key] = brkt_cols_dict[col_key] + "\n" + matchup_dict[match];
+    
+        //close out the div on each column, add the column into the bracket.
+        for (col in brkt_cols_dict) {
+            brkt_cols_dict[col_key] = brkt_cols_dict[col_key] + "\n</div>"
+            document.getElementById("bracket").innerHTML += brkt_cols_dict[col];
+        }
+    
+        //document.getElementById("bracket_js").innerHTML += matchup_dict[2];
+    } catch {
+        console.log('An Error Occurred')
     }
-
-    //close out the div on each column, add the column into the bracket.
-    for (col in brkt_cols_dict) {
-        brkt_cols_dict[col_key] = brkt_cols_dict[col_key] + "\n</div>"
-        document.getElementById("bracket").innerHTML += brkt_cols_dict[col];
     }
-
-    //document.getElementById("bracket_js").innerHTML += matchup_dict[2];
-}
+   
 
 function brk_rslt_select() {
   
