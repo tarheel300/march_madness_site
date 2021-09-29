@@ -40,6 +40,10 @@
     height: 40px;
 }
 
+.matchup:hover {
+    background-color: #FFFFFF;
+}
+
 .right {
     direction: rtl;
 }
