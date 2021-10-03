@@ -10,6 +10,40 @@
     --nav_menu_fnt_clr: black;
 }
 
+/*
+Section just for CheckBox Fun
+*/
+
+/*controls the height, and removes the actual default check box*/
+input[type="checkbox"] {
+    display: none;
+    height: 10vh;
+}
+
+/*looking at all label for Checkboxes*/
+input[type="checkbox"] + label {
+    margin: 2em;
+    font-size: 1.1em;
+}
+
+input[type="checkbox"] + label:before {
+    content: "☺️";
+    background-color: red;
+    border: .1em;
+    border-color: black;
+    border-style: ridge;
+}
+
+input[type="checkbox"]:checked + label:before {
+    content: "☺️";
+    background-color: green;
+}
+
+/*
+Section just for CheckBox Fun
+*/
+
+
 #bracket {
     background-color: var(--bg_brkt_clr);
     display: grid;
@@ -42,6 +76,7 @@
 
 .matchup:hover {
     background-color: #FFFFFF;
+    align-items: center;
 }
 
 .right {
