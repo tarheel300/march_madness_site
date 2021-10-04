@@ -22,6 +22,7 @@ input[type="checkbox"] {
 
 /*looking at all label for Checkboxes*/
 input[type="checkbox"] + label {
+    display: block;
     margin: 2em;
     font-size: 1.1em;
 }
@@ -29,9 +30,12 @@ input[type="checkbox"] + label {
 input[type="checkbox"] + label:before {
     content: "☺️";
     background-color: red;
-    border: .1em;
-    border-color: black;
-    border-style: ridge;
+    border: .2em solid black;
+}
+
+input[type="checkbox"] + label:active:before {
+    transform: scale(3);
+    background-color: blue;
 }
 
 input[type="checkbox"]:checked + label:before {
